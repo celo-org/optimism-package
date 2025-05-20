@@ -93,7 +93,7 @@ def deploy_contracts(
         run=" && ".join(
             [
                 "mkdir -p /network-data",
-                "op-deployer init --intent-config-type custom --l1-chain-id $L1_CHAIN_ID --l2-chain-ids {0} --workdir /network-data".format(
+                "op-deployer init --l1-chain-id $L1_CHAIN_ID --l2-chain-ids {0} --workdir /network-data".format(
                     l2_chain_ids
                 ),
             ]
@@ -288,19 +288,6 @@ def deploy_contracts(
     apply_cmds = [
         "op-deployer apply --l1-rpc-url $L1_RPC_URL --private-key $PRIVATE_KEY --workdir /network-data",
     ]
-    for chain in optimism_args.chains:
-        network_id = chain.network_params.network_id
-        apply_cmds.extend(
-            [
-                "op-deployer inspect genesis --workdir /network-data --outfile /network-data/genesis-{0}.json {0}".format(
-                    network_id
-                ),
-                "op-deployer inspect rollup --workdir /network-data --outfile /network-data/rollup-{0}.json {0}".format(
-                    network_id
-                ),
-            ]
-        )
-
     op_deployer_output = plan.run_sh(
         name="op-deployer-apply",
         description="Apply L2 contract deployments",
@@ -321,6 +308,35 @@ def deploy_contracts(
         }
         | contracts_extra_files,
         run=" && ".join(apply_cmds),
+    )
+
+    inspect_cmds = []
+    for chain in optimism_args.chains:
+        network_id = chain.network_params.network_id
+        inspect_cmds.extend(
+            [
+                "op-deployer inspect genesis --workdir /network-data --outfile /network-data/genesis-{0}.json {0}".format(
+                    network_id
+                ),
+                "op-deployer inspect rollup --workdir /network-data --outfile /network-data/rollup-{0}.json {0}".format(
+                    network_id
+                ),
+            ]
+        )
+    op_deployer_output = plan.run_sh(
+        name="op-deployer-inspect",
+        description="Generate L2 genesis.json and rollup.json",
+        image=optimism_args.op_contract_deployer_params.image_inspect,
+        store=[
+            StoreSpec(
+                src="/network-data",
+                name="op-deployer-configs",
+            )
+        ],
+        files={
+            "/network-data": op_deployer_output.files_artifacts[0],
+        },
+        run=" && ".join(inspect_cmds),
     )
 
     for chain in optimism_args.chains:

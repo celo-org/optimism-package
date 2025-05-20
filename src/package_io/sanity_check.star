@@ -158,6 +158,7 @@ SUBCATEGORY_PARAMS = {
 
 OP_CONTRACT_DEPLOYER_PARAMS = [
     "image",
+    "image_inspect",
     "l1_artifacts_locator",
     "l2_artifacts_locator",
     "overrides",

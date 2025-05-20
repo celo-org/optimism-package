@@ -220,6 +220,7 @@ def input_parser(
         supervisors=results["supervisors"],
         op_contract_deployer_params=struct(
             image=results["op_contract_deployer_params"]["image"],
+            image_inspect=results["op_contract_deployer_params"]["image_inspect"],
             l1_artifacts_locator=results["op_contract_deployer_params"][
                 "l1_artifacts_locator"
             ],
@@ -619,11 +620,11 @@ def default_participant():
 def default_op_contract_deployer_params(registry):
     return {
         "image": registry.get(_registry.OP_DEPLOYER),
+        "image_inspect": registry.get(_registry.OP_DEPLOYER),
         "l1_artifacts_locator": "https://storage.googleapis.com/oplabs-contract-artifacts/artifacts-v1-02024c5a26c16fc1a5c716fff1c46b5bf7f23890d431bb554ddbad60971211d4.tar.gz",
         "l2_artifacts_locator": "https://storage.googleapis.com/oplabs-contract-artifacts/artifacts-v1-02024c5a26c16fc1a5c716fff1c46b5bf7f23890d431bb554ddbad60971211d4.tar.gz",
         "overrides": {},
     }
-
 
 def default_ethereum_package_network_params():
     return {
