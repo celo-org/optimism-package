@@ -1,4 +1,5 @@
-name: github.com/ethpandaops/optimism-package
+name: github.com/Kourin1996/optimism-package
 description: |
-  # Optimism Package
-  This is a Kurtosis package for deploying an Optimism Rollup
+  This is a Kurtosis package for deploying an Celo Rollup
+replace:
+  github.com/ethpandaops/ethereum-package: github.com/ethpandaops/ethereum-package@4.5.0
