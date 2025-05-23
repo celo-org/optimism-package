@@ -205,6 +205,9 @@ def deploy_contracts(
                     "fundDevAccounts": (
                         True if chain.network_params.fund_dev_accounts else False
                     ),
+                    "useCustomGasToken": (
+                        True if chain.network_params.use_custom_gas_token else False
+                    ),
                 },
                 "baseFeeVaultRecipient": read_chain_cmd(
                     "baseFeeVaultRecipient", chain_id
