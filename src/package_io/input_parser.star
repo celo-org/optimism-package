@@ -180,6 +180,7 @@ def input_parser(
                     isthmus_time_offset=result["network_params"]["isthmus_time_offset"],
                     interop_time_offset=result["network_params"]["interop_time_offset"],
                     fund_dev_accounts=result["network_params"]["fund_dev_accounts"],
+                    deploy_celo_contracts=result["network_params"]["deploy_celo_contracts"],
                     use_custom_gas_token=result["network_params"]["use_custom_gas_token"]
                 ),
                 proxyd_params=struct(
@@ -535,6 +536,7 @@ def default_network_params():
         "isthmus_time_offset": None,
         "interop_time_offset": None,
         "fund_dev_accounts": True,
+        "deploy_celo_contracts": False,
         "use_custom_gas_token": False
     }
 

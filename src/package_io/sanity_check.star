@@ -140,6 +140,7 @@ SUBCATEGORY_PARAMS = {
         "isthmus_time_offset",
         "interop_time_offset",
         "fund_dev_accounts",
+        "deploy_celo_contracts",
         "use_custom_gas_token"
     ],
     "proxyd_params": ["image", "extra_params"],
