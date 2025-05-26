@@ -293,7 +293,7 @@ def deploy_contracts(
 
     apply_cmds = [
         "mkdir -p /output",
-        "op-deployer apply --l1-rpc-url $L1_RPC_URL --private-key $PRIVATE_KEY --workdir /network-data > /output/stdout.txt 2>&1",
+        "op-deployer apply --l1-rpc-url $L1_RPC_URL --private-key $PRIVATE_KEY --workdir /network-data",
     ]
     op_deployer_output = plan.run_sh(
         name="op-deployer-apply",
@@ -308,10 +308,6 @@ def deploy_contracts(
             StoreSpec(
                 src="/network-data",
                 name="op-deployer-configs",
-            ),
-            StoreSpec(
-                src="/output/stdout.txt",
-                name="build-stdout",
             ),
         ],
         files={
