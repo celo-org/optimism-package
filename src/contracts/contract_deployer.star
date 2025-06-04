@@ -93,7 +93,7 @@ def deploy_contracts(
         run=" && ".join(
             [
                 "mkdir -p /network-data",
-                "op-deployer init --l1-chain-id $L1_CHAIN_ID --l2-chain-ids {0} --workdir /network-data".format(
+                "op-deployer init --intent-type custom --l1-chain-id $L1_CHAIN_ID --l2-chain-ids {0} --workdir /network-data".format(
                     l2_chain_ids
                 ),
             ]
@@ -292,7 +292,6 @@ def deploy_contracts(
     )
 
     apply_cmds = [
-        "mkdir -p /output",
         "op-deployer apply --l1-rpc-url $L1_RPC_URL --private-key $PRIVATE_KEY --workdir /network-data",
     ]
     op_deployer_output = plan.run_sh(
