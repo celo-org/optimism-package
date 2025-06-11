@@ -6,6 +6,7 @@ input_parser = import_module("./package_io/input_parser.star")
 util = import_module("./util.star")
 tx_fuzzer = import_module("./transaction_fuzzer/transaction_fuzzer.star")
 
+da_proxy_launcher = import_module("./alt-da/da-proxy/da_proxy_launcher.star")
 
 def launch_l2(
     plan,
@@ -47,6 +48,17 @@ def launch_l2(
             l2_args.da_server_params.cmd,
         )
         plan.print("Successfully launched da-server")
+
+        if l2_args.da_server_params.maintenance:
+            plan.print("Launching da-proxy")
+            da_server_context = da_proxy_launcher.launch_da_proxy(
+                plan,
+                "da-proxy-{0}".format(l2_services_suffix),
+                l2_args.da_server_params.image_proxy,
+                da_server_context.http_url,
+                True
+            )
+            plan.print("Successfully launched da-proxy: {}".format(da_server_context.http_url))
 
     l2 = participant_network.launch_participant_network(
         plan=plan,

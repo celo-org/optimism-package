@@ -151,6 +151,8 @@ SUBCATEGORY_PARAMS = {
         "enabled",
         "image",
         "cmd",
+        "maintenance",
+        "image_proxy"
     ],
     "tx_fuzzer_params": [
         "image",
