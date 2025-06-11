@@ -1,4 +1,4 @@
-name: github.com/Kourin1996/optimism-package
+name: github.com/celo-org/optimism-package
 description: |
   This is a Kurtosis package for deploying an Celo Rollup
 replace:
