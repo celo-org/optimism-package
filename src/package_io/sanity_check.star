@@ -146,7 +146,7 @@ SUBCATEGORY_PARAMS = {
         "use_dev_celo_token_l1"
     ],
     "batcher_params": ["image", "extra_params"],
-    "proposer_params": ["image", "extra_params", "game_type", "proposal_interval"],
+    "proposer_params": ["image", "extra_params", "game_type", "proposal_interval", "disable"],
     "challenger_params": [
         "enabled",
         "image",
