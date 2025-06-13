@@ -412,6 +412,9 @@ optimism_package:
 
       # Default proposer configuration
       proposer_params:
+        # disable the launching the proposer alltogether
+        disable: False
+
         # The Docker image that should be used for the proposer; leave blank to use the default op-proposer image
         image: ""
 

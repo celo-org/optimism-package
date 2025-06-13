@@ -238,6 +238,7 @@ def input_parser(plan, input_args):
                     extra_params=result["batcher_params"]["extra_params"],
                 ),
                 proposer_params=struct(
+                    disable=result["proposer_params"]["disable"],
                     image=result["proposer_params"]["image"],
                     extra_params=result["proposer_params"]["extra_params"],
                     game_type=result["proposer_params"]["game_type"],
@@ -613,6 +614,7 @@ def default_proposer_params():
         "extra_params": [],
         "game_type": 1,
         "proposal_interval": "10m",
+        "disable": False,
     }
 
 
