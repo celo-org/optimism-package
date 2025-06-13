@@ -188,6 +188,25 @@ def deploy_contracts(
             "dangerouslyAllowCustomDisputeParameters": True,
             "faultGameAbsolutePrestate": absolute_prestate,
         }
+    if (
+        "unifiedProofTime"
+        in optimism_args.op_contract_deployer_params.global_deploy_overrides
+    ):
+        if not "globalDeployOverrides" in intent:
+            intent["globalDeployOverrides"] = {}
+
+        unified_proof_time = optimism_args.op_contract_deployer_params.global_deploy_overrides[
+            "unifiedProofTime"
+        ]
+
+        keys = [
+            "preimageOracleChallengePeriod",
+            "proofMaturityDelaySeconds",
+            "disputeGameFinalityDelaySeconds",
+            "faultGameWithdrawalDelay"
+        ]
+        intent["globalDeployOverrides"].update({k: unified_proof_time for k in keys})
+    
 
     intent["globalDeployOverrides"].update({
         "useDevCeloTokenL1": (

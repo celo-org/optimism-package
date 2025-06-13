@@ -171,7 +171,7 @@ OP_CONTRACT_DEPLOYER_PARAMS = [
     "global_deploy_overrides",
 ]
 
-OP_CONTRACT_DEPLOYER_GLOBAL_DEPLOY_OVERRIDES = ["faultGameAbsolutePrestate"]
+OP_CONTRACT_DEPLOYER_GLOBAL_DEPLOY_OVERRIDES = ["faultGameAbsolutePrestate", "unifiedProofTime"]
 
 ADDITIONAL_SERVICES_PARAMS = [
     "blockscout",
