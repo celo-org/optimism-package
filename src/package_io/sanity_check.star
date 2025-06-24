@@ -146,7 +146,7 @@ SUBCATEGORY_PARAMS = {
         "use_custom_gas_token"
     ],
     "batcher_params": ["image", "extra_params"],
-    "proposer_params": ["image", "extra_params", "game_type", "proposal_interval"],
+    "proposer_params": ["image", "extra_params", "game_type", "proposal_interval", "enabled"],
     "challenger_params": [
         "enabled",
         "image",

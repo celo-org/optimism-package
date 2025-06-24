@@ -112,18 +112,19 @@ def launch_participant_network(
         if proposer_params.image != ""
         else input_parser.DEFAULT_PROPOSER_IMAGES["op-proposer"]
     )
-    op_proposer_launcher.launch(
-        plan,
-        "op-proposer-{0}".format(l2_services_suffix),
-        op_proposer_image,
-        all_cl_contexts[0],
-        l1_config_env_vars,
-        proposer_key,
-        game_factory_address,
-        proposer_params,
-        network_params,
-        observability_helper,
-    )
+    if proposer_params.enabled:
+        op_proposer_launcher.launch(
+            plan,
+            "op-proposer-{0}".format(l2_services_suffix),
+            op_proposer_image,
+            all_cl_contexts[0],
+            l1_config_env_vars,
+            proposer_key,
+            game_factory_address,
+            proposer_params,
+            network_params,
+            observability_helper,
+        )
 
     return struct(
         participants=all_participants,
