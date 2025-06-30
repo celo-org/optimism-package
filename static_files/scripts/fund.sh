@@ -9,19 +9,20 @@ nonce=$(cast nonce "$addr")
 
 deployer_addr=$(cast wallet address "$DEPLOYER_PRIVATE_KEY")
 
-mnemonic="test test test test test test test test test test test junk"
+mnemonic="$NETWORK_MNEMONIC"
 roles=("l2ProxyAdmin" "l1ProxyAdmin" "baseFeeVaultRecipient" "l1FeeVaultRecipient" "sequencerFeeVaultRecipient" "systemConfigOwner")
 funded_roles=("proposer" "batcher" "sequencer" "challenger")
 
-IFS=',';read -r -a chain_ids <<< "$1"
+IFS=','
+read -r -a chain_ids <<<"$1"
 
 write_keyfile() {
-  echo "{\"address\":\"$1\",\"privateKey\":\"$2\"}" > "/network-data/$3.json"
+  echo "{\"address\":\"$1\",\"privateKey\":\"$2\"}" >"/network-data/$3.json"
 }
 
 send() {
   cast send $1 --value "$FUND_VALUE" --private-key "$FUND_PRIVATE_KEY" --timeout 60 --nonce "$nonce" --priority-gas-price 1gwei &
-  nonce=$((nonce+1))
+  nonce=$((nonce + 1))
 }
 
 # Create a JSON object to store all the wallet addresses and private keys, start with an empty one
@@ -31,7 +32,7 @@ for chain_id in "${chain_ids[@]}"; do
 
   for index in "${!funded_roles[@]}"; do
     role="${funded_roles[$index]}"
-    role_idx=$((index+1))
+    role_idx=$((index + 1))
 
     private_key=$(cast wallet private-key "$mnemonic" "m/44'/60'/2'/$chain_id/$role_idx")
     address=$(cast wallet address "${private_key}")
@@ -77,7 +78,7 @@ for chain_id in "${chain_ids[@]}"; do
 done
 
 echo "Wallet private key and addresses"
-echo "$wallets_json" > "/network-data/wallets.json"
+echo "$wallets_json" >"/network-data/wallets.json"
 echo "$wallets_json"
 
 wait
