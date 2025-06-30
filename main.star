@@ -172,4 +172,5 @@ def get_l1_config(all_l1_participants, l1_network_params, l1_network_id):
     env_vars["L1_WS_URL"] = str(all_l1_participants[0].el_context.ws_url)
     env_vars["L1_CHAIN_ID"] = str(l1_network_id)
     env_vars["L1_BLOCK_TIME"] = str(l1_network_params.seconds_per_slot)
+    env_vars["NETWORK_MNEMONIC"] = str(l1_network_params.preregistered_validator_keys_mnemonic)
     return env_vars
