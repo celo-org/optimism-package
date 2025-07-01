@@ -1,5 +1,5 @@
 ethereum_package_shared_utils = import_module(
-    "github.com/ethpandaops/ethereum-package/src/shared_utils/shared_utils.star"
+    "github.com/celo-org/ethereum-package/src/shared_utils/shared_utils.star"
 )
 
 postgres = import_module("github.com/kurtosis-tech/postgres-package/main.star")

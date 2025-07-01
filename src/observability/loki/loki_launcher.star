@@ -2,7 +2,7 @@ constants = import_module("../../package_io/constants.star")
 util = import_module("../../util.star")
 
 ethereum_package_shared_utils = import_module(
-    "github.com/ethpandaops/ethereum-package/src/shared_utils/shared_utils.star"
+    "github.com/celo-org/ethereum-package/src/shared_utils/shared_utils.star"
 )
 
 SERVICE_NAME = "loki"

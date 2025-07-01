@@ -2,7 +2,7 @@ op_challenger_launcher = import_module("/src/challenger/op-challenger/launcher.s
 input_parser = import_module("/src/package_io/input_parser.star")
 observability = import_module("/src/observability/observability.star")
 ethereum_package_constants = import_module(
-    "github.com/ethpandaops/ethereum-package/src/package_io/constants.star"
+    "github.com/celo-org/ethereum-package/src/package_io/constants.star"
 )
 util = import_module("/src/util.star")
 

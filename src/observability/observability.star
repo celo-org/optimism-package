@@ -1,9 +1,9 @@
 ethereum_package_shared_utils = import_module(
-    "github.com/ethpandaops/ethereum-package/src/shared_utils/shared_utils.star"
+    "github.com/celo-org/ethereum-package/src/shared_utils/shared_utils.star"
 )
 
 ethereum_package_node_metrics = import_module(
-    "github.com/ethpandaops/ethereum-package/src/node_metrics_info.star"
+    "github.com/celo-org/ethereum-package/src/node_metrics_info.star"
 )
 
 util = import_module("../util.star")

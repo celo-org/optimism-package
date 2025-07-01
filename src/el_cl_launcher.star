@@ -1,9 +1,9 @@
 ethereum_package_shared_utils = import_module(
-    "github.com/ethpandaops/ethereum-package/src/shared_utils/shared_utils.star"
+    "github.com/celo-org/ethereum-package/src/shared_utils/shared_utils.star"
 )
 
 ethereum_package_input_parser = import_module(
-    "github.com/ethpandaops/ethereum-package/src/package_io/input_parser.star"
+    "github.com/celo-org/ethereum-package/src/package_io/input_parser.star"
 )
 
 input_parser = import_module("./package_io/input_parser.star")
