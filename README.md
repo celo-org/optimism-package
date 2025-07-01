@@ -29,7 +29,7 @@ ethereum_package:
 
 ```
 
-Please note, by default your network will be running a `minimal` preset Ethereum network. Click [here](https://github.com/ethereum/consensus-specs/blob/dev/configs/minimal.yaml) to learn more about minimal preset. You can [customize](https://github.com/ethpandaops/ethereum-package) the L1 Ethereum network by modifying the `ethereum_package` configuration.
+Please note, by default your network will be running a `minimal` preset Ethereum network. Click [here](https://github.com/ethereum/consensus-specs/blob/dev/configs/minimal.yaml) to learn more about minimal preset. You can [customize](https://github.com/celo-org/ethereum-package) the L1 Ethereum network by modifying the `ethereum_package` configuration.
 
 You can also completely remove `ethereum_package` from your configuration in which case it will default to a `minimal` preset Ethereum network.
 

@@ -1,23 +1,23 @@
 ethereum_package_shared_utils = import_module(
-    "github.com/ethpandaops/ethereum-package/src/shared_utils/shared_utils.star"
+    "github.com/celo-org/ethereum-package/src/shared_utils/shared_utils.star"
 )
 
 ethereum_package_el_context = import_module(
-    "github.com/ethpandaops/ethereum-package/src/el/el_context.star"
+    "github.com/celo-org/ethereum-package/src/el/el_context.star"
 )
 ethereum_package_el_admin_node_info = import_module(
-    "github.com/ethpandaops/ethereum-package/src/el/el_admin_node_info.star"
+    "github.com/celo-org/ethereum-package/src/el/el_admin_node_info.star"
 )
 
 ethereum_package_node_metrics = import_module(
-    "github.com/ethpandaops/ethereum-package/src/node_metrics_info.star"
+    "github.com/celo-org/ethereum-package/src/node_metrics_info.star"
 )
 ethereum_package_input_parser = import_module(
-    "github.com/ethpandaops/ethereum-package/src/package_io/input_parser.star"
+    "github.com/celo-org/ethereum-package/src/package_io/input_parser.star"
 )
 
 ethereum_package_constants = import_module(
-    "github.com/ethpandaops/ethereum-package/src/package_io/constants.star"
+    "github.com/celo-org/ethereum-package/src/package_io/constants.star"
 )
 
 constants = import_module("../../package_io/constants.star")

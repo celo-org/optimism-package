@@ -1,14 +1,14 @@
 shared_utils = import_module(
-    "github.com/ethpandaops/ethereum-package/src/shared_utils/shared_utils.star"
+    "github.com/celo-org/ethereum-package/src/shared_utils/shared_utils.star"
 )
 el_context = import_module(
-    "github.com/ethpandaops/ethereum-package/src/el/el_context.star"
+    "github.com/celo-org/ethereum-package/src/el/el_context.star"
 )
 el_admin_node_info = import_module(
-    "github.com/ethpandaops/ethereum-package/src/el/el_admin_node_info.star"
+    "github.com/celo-org/ethereum-package/src/el/el_admin_node_info.star"
 )
 constants = import_module(
-    "github.com/ethpandaops/ethereum-package/src/package_io/constants.star"
+    "github.com/celo-org/ethereum-package/src/package_io/constants.star"
 )
 
 RPC_PORT_NUM = 8541

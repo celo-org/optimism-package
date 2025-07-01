@@ -1,17 +1,17 @@
 ethereum_package_shared_utils = import_module(
-    "github.com/ethpandaops/ethereum-package/src/shared_utils/shared_utils.star"
+    "github.com/celo-org/ethereum-package/src/shared_utils/shared_utils.star"
 )
 
 ethereum_package_cl_context = import_module(
-    "github.com/ethpandaops/ethereum-package/src/cl/cl_context.star"
+    "github.com/celo-org/ethereum-package/src/cl/cl_context.star"
 )
 
 ethereum_package_constants = import_module(
-    "github.com/ethpandaops/ethereum-package/src/package_io/constants.star"
+    "github.com/celo-org/ethereum-package/src/package_io/constants.star"
 )
 
 ethereum_package_input_parser = import_module(
-    "github.com/ethpandaops/ethereum-package/src/package_io/input_parser.star"
+    "github.com/celo-org/ethereum-package/src/package_io/input_parser.star"
 )
 
 constants = import_module("../../package_io/constants.star")

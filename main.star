@@ -1,4 +1,4 @@
-ethereum_package = import_module("github.com/ethpandaops/ethereum-package/main.star")
+ethereum_package = import_module("github.com/celo-org/ethereum-package/main.star")
 contract_deployer = import_module("./src/contracts/contract_deployer.star")
 l2_launcher = import_module("./src/l2.star")
 op_supervisor_launcher = import_module(
@@ -13,7 +13,7 @@ observability = import_module("./src/observability/observability.star")
 wait_for_sync = import_module("./src/wait/wait_for_sync.star")
 input_parser = import_module("./src/package_io/input_parser.star")
 ethereum_package_static_files = import_module(
-    "github.com/ethpandaops/ethereum-package/src/static_files/static_files.star"
+    "github.com/celo-org/ethereum-package/src/static_files/static_files.star"
 )
 
 
