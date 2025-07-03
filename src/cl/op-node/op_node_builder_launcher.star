@@ -257,7 +257,6 @@ def get_beacon_config(
         cmd += [
             "--p2p.sequencer.key=" + sequencer_private_key,
             "--sequencer.enabled",
-            "--sequencer.use-finalized=true"
         ]
 
     if len(existing_cl_clients) > 0:
