@@ -300,7 +300,7 @@ def deploy_contracts(
             StoreSpec(
                 src="/network-data",
                 name="op-deployer-configs",
-            ),
+            )
         ],
         files={
             "/network-data": op_deployer_configure.files_artifacts[0],
