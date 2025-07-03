@@ -325,7 +325,7 @@ def deploy_contracts(
     op_deployer_output = plan.run_sh(
         name="op-deployer-inspect",
         description="Generate L2 genesis.json and rollup.json",
-        image=optimism_args.op_contract_deployer_params.image_inspect,
+        image=optimism_args.op_contract_deployer_params.image_genesis,
         store=[
             StoreSpec(
                 src="/network-data",
