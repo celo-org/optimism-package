@@ -143,7 +143,7 @@ SUBCATEGORY_PARAMS = {
         "interop_time_offset",
         "fund_dev_accounts",
         "deploy_celo_contracts", 
-        "use_custom_gas_token"
+        "use_dev_celo_token_l1"
     ],
     "batcher_params": ["image", "extra_params"],
     "proposer_params": ["image", "extra_params", "game_type", "proposal_interval"],

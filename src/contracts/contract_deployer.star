@@ -172,6 +172,7 @@ def deploy_contracts(
             "proxyAdminOwner": read_chain_cmd("l1ProxyAdmin", l2_chain_ids_list[0]),
         },
         "chains": [],
+        "globalDeployOverrides": {},
     }
 
     absolute_prestate = ""
@@ -188,6 +189,12 @@ def deploy_contracts(
             "faultGameAbsolutePrestate": absolute_prestate,
         }
 
+    intent["globalDeployOverrides"].update({
+        "useDevCeloTokenL1": (
+            True if chain.network_params.use_dev_celo_token_l1 else False
+        ),
+    })
+
     for i, chain in enumerate(optimism_args.chains):
         chain_id = str(chain.network_params.network_id)
         intent_chain = dict(CANNED_VALUES)
@@ -200,9 +207,6 @@ def deploy_contracts(
                     ),
                     "deployCeloContracts": (
                         True if chain.network_params.deploy_celo_contracts else False
-                    ),
-                    "useCustomGasToken": (
-                        True if chain.network_params.use_custom_gas_token else False
                     ),
                 },
                 "baseFeeVaultRecipient": read_chain_cmd(

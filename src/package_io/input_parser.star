@@ -211,7 +211,7 @@ def input_parser(plan, input_args):
                     interop_time_offset=result["network_params"]["interop_time_offset"],
                     fund_dev_accounts=result["network_params"]["fund_dev_accounts"],
                     deploy_celo_contracts=result["network_params"]["deploy_celo_contracts"],
-                    use_custom_gas_token=result["network_params"]["use_custom_gas_token"]
+                    use_dev_celo_token_l1=result["network_params"]["use_dev_celo_token_l1"]
                 ),
                 batcher_params=struct(
                     image=result["batcher_params"]["image"],
@@ -557,7 +557,7 @@ def default_network_params():
         "interop_time_offset": None,
         "fund_dev_accounts": True,
         "deploy_celo_contracts": False,
-        "use_custom_gas_token": False
+        "use_dev_celo_token_l1": False
     }
 
 
