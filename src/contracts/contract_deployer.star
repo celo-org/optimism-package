@@ -170,9 +170,7 @@ def deploy_contracts(
             "proxyAdminOwner": read_chain_cmd("l1ProxyAdmin", l2_chain_ids_list[0]),
         },
         "chains": [],
-        "globalDeployOverrides": {
-            "eip1559BaseFeeFloor": 25000000000
-        },
+        "globalDeployOverrides": {},
     }
 
     absolute_prestate = ""
@@ -212,6 +210,7 @@ def deploy_contracts(
         "useDevCeloTokenL1": (
             True if chain.network_params.use_dev_celo_token_l1 else False
         ),
+        "eip1559BaseFeeFloor": 25000000000
     })
 
     for i, chain in enumerate(optimism_args.chains):
