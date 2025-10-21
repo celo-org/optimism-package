@@ -170,7 +170,9 @@ def deploy_contracts(
             "proxyAdminOwner": read_chain_cmd("l1ProxyAdmin", l2_chain_ids_list[0]),
         },
         "chains": [],
-        "globalDeployOverrides": {},
+        "globalDeployOverrides": {
+            "eip1559BaseFeeFloor": 25000000000
+        },
     }
 
     absolute_prestate = ""
