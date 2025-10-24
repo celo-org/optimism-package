@@ -201,9 +201,15 @@ def deploy_contracts(
             "preimageOracleChallengePeriod",
             "proofMaturityDelaySeconds",
             "disputeGameFinalityDelaySeconds",
-            "faultGameWithdrawalDelay"
+            "faultGameWithdrawalDelay",
+            "faultGameMaxClockDuration"
         ]
         intent["globalDeployOverrides"].update({k: unified_proof_time for k in keys})
+        keys = [
+            "faultGameClockExtension",
+            "preimageOracleChallengePeriod"
+        ]
+        intent["globalDeployOverrides"].update({k: int(unified_proof_time / 2) for k in keys})
 
 
     intent["globalDeployOverrides"].update({
