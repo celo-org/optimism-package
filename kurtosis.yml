@@ -3,4 +3,4 @@ description: |
   # Optimism Package
   This is a Kurtosis package for deploying an Celo Rollup
 replace:
-  github.com/ethpandaops/ethereum-package: github.com/ethpandaops/ethereum-package@4.5.0
+  github.com/ethpandaops/ethereum-package: github.com/ethpandaops/ethereum-package@f5b3e67c47044e5f86259d259a32206286ba9080
